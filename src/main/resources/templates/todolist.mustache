@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo list</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<section id="todolist">
+    <section id="links">
+        <a href="/todolist">ToDo List</a>
+        <a href="/blocnote">Bloc note</a>
+    </section>
+
+    <h1>ToDo List</h1>
+
+    <form action="/todolist/todo" method="post">
+        <input type="text" name="text" placeholder="To do ...">
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <section id="todos">
+        {{#todos}}
+            <div class="todo">
+                <span class="text">{{text}}</span>
+                <span class="delete-icon">🗑️</span>
+            </div>
+        {{/todos}}
+    </section>
+
+</section>
+
+<script src="/js/htmx.min.js"></script>
+</body>
+</html>

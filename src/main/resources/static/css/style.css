@@ -1,0 +1,77 @@
+body {
+    width: 60%;
+    margin: 30px auto auto;
+    font-family: Arial;
+    font-size: 28px;
+}
+
+#links {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+#links a {
+    font-size: 25px;
+}
+
+/* todolist */
+#todolist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#todolist form {
+    display: flex;
+    width: 60%;
+    margin-bottom: 30px;
+}
+
+#todolist form input {
+    flex-grow: 1;
+}
+
+#todos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+
+.todo {
+    display: flex;
+    width: 100%;
+}
+
+.todo .text {
+    flex-grow: 1;
+}
+
+.todo .delete-icon {
+    cursor: pointer;
+}
+
+/* blocnote */
+#blocnote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#blocnote form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 50%;
+}
+
+#blocnote form textarea {
+    height: 250px;
+    font-size: 28px;
+}
+
+#blocnote form button {
+    align-self: center;
+}

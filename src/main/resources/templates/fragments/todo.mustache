@@ -1,4 +1,8 @@
-<div class="todo">
+<div class="todo todo-{{newTodo.id}}">
     <span class="text">{{newTodo.text}}</span>
-    <span>🗑️</span>
+    <span hx-delete="/todolist/todo/{{newTodo.id}}"
+          hx-trigger="click"
+          hx-target=".todo-{{newTodo.id}}"
+          hx-swap="outerHTML"
+          hx-confirm="Êtes-vous sûr de vouloir supprimer le Todo ?">🗑️</span>
 </div>

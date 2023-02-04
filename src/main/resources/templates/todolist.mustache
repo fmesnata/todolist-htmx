@@ -15,9 +15,15 @@
 <section id="todolist" class="content">
     <h1>ToDo List</h1>
 
-    <form action="/todolist/todo" method="post">
+    <form>
         <input type="text" name="text" placeholder="To do ...">
-        <button type="submit">Ajouter</button>
+        <button type="submit"
+                hx-post="/todolist/todo"
+                hx-trigger="click"
+                hx-target="#todos"
+                hx-swap="beforeend">
+            Ajouter
+        </button>
     </form>
 
     <section id="todos">

@@ -26,7 +26,9 @@ public class TodoListController {
     @PostMapping(path = {"/todolist/todo"})
     public ModelAndView addTodo(String text) {
         Todo newTodo = todoListService.addTodo(text);
-        return new ModelAndView("redirect:/todolist");
+        ModelAndView modelAndView = new ModelAndView("fragments/todo");
+        modelAndView.addObject("newTodo", newTodo);
+        return modelAndView;
     }
 
     @DeleteMapping(path = {"/todolist/todo/{todoId}"})

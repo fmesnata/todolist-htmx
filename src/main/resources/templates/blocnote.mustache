@@ -8,8 +8,19 @@
 <body>
 
 <nav id="links">
-    <a href="/todolist">ToDo List</a>
-    <a href="/blocnote">Bloc note</a>
+    <a href="/todolist"
+       hx-get="/todolist"
+       hx-trigger="click"
+       hx-target=".content"
+       hx-swap="outerHTML"
+       hx-push-url="true">ToDo List</a>
+
+    <a href="/blocnote"
+       hx-get="/blocnote"
+       hx-trigger="click"
+       hx-target=".content"
+       hx-swap="outerHTML"
+       hx-push-url="true">Bloc note</a>
 </nav>
 
 <section id="blocnote" class="content">

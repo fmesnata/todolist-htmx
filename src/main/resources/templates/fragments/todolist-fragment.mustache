@@ -1,28 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Todo list</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-
-<nav id="links">
-    <a href="/todolist"
-       hx-get="/todolist"
-       hx-trigger="click"
-       hx-target=".content"
-       hx-swap="outerHTML"
-       hx-push-url="true">ToDo List</a>
-
-    <a href="/blocnote"
-       hx-get="/blocnote"
-       hx-trigger="click"
-       hx-target=".content"
-       hx-swap="outerHTML"
-       hx-push-url="true">Bloc note</a>
-</nav>
-
 <section id="todolist" class="content">
     <h1>ToDo List</h1>
 
@@ -50,9 +25,4 @@
             </div>
         {{/todos}}
     </section>
-
 </section>
-
-<script src="/js/htmx.min.js"></script>
-</body>
-</html>

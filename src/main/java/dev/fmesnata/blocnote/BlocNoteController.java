@@ -23,6 +23,14 @@ public class BlocNoteController {
         return modelAndView;
     }
 
+    @GetMapping(path = "/blocnote", headers = "HX-Request")
+    public ModelAndView blocNotePageFragment() {
+        Note note = blocNoteService.getNote();
+        ModelAndView modelAndView = new ModelAndView("fragments/blocnote-fragment");
+        modelAndView.addObject("note", note);
+        return modelAndView;
+    }
+
     @PostMapping("/blocnote")
     public ModelAndView updateNote(String newNote) {
         Note note = new Note(newNote);

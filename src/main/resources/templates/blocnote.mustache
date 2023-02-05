@@ -13,18 +13,20 @@
        hx-trigger="click"
        hx-target=".content"
        hx-swap="outerHTML"
-       hx-push-url="true">ToDo List</a>
+       hx-push-url="true"
+       hx-indicator="#indicator">ToDo List</a>
 
     <a href="/blocnote"
        hx-get="/blocnote"
        hx-trigger="click"
        hx-target=".content"
        hx-swap="outerHTML"
-       hx-push-url="true">Bloc note</a>
+       hx-push-url="true"
+       hx-indicator="#indicator">Bloc note</a>
 </nav>
 
 <section id="blocnote" class="content">
-    <h1>Bloc Note</h1>
+    <h1>Bloc Note <img src="images/spinner.gif" class="htmx-indicator" id="indicator"></h1>
 
     <form action="/blocnote" method="post">
         <textarea name="newNote">{{note.text}}</textarea>

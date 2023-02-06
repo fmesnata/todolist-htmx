@@ -29,6 +29,10 @@ body {
     margin-bottom: 30px;
 }
 
+.form-wrapper {
+    display: contents;
+}
+
 #todolist form input {
     flex-grow: 1;
 }

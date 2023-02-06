@@ -28,18 +28,14 @@
 <section id="todolist" class="content">
     <h1>ToDo List <img src="images/spinner.gif" class="htmx-indicator" id="indicator"></h1>
 
-    <form>
-        <input type="text" name="text" placeholder="To do ...">
-        <button type="submit"
-                hx-post="/todolist/todo"
-                hx-trigger="click"
-                hx-target="#todos"
-                hx-swap="beforeend">
-            Ajouter
-        </button>
-    </form>
+    <div hx-ws="connect:ws://localhost:8080/todolist-ws" class="form-wrapper">
+        <form hx-ws="send:submit">
+            <input type="text" name="text" placeholder="To do ...">
+            <button type="submit">Ajouter</button>
+        </form>
+    </div>
 
-    <section id="todos" hx-trigger="every 2s" hx-get="/todolist-polling">
+    <section id="todos">
         {{#todos}}
             <div class="todo todo-{{id}}">
                 <span class="text">{{text}}</span>

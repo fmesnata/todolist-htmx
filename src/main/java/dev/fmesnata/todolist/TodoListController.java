@@ -1,6 +1,5 @@
 package dev.fmesnata.todolist;
 
-import dev.fmesnata.blocnote.Note;
 import dev.fmesnata.todolist.service.TodoListService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +26,13 @@ public class TodoListController {
     @GetMapping(path = {"/", "/todolist"}, headers = "HX-Request")
     public ModelAndView todoListFragment() {
         ModelAndView modelAndView = new ModelAndView("fragments/todolist-fragment");
+        modelAndView.addObject("todos", todoListService.getTodos());
+        return modelAndView;
+    }
+
+    @GetMapping(path = "/todolist-polling")
+    public ModelAndView todoListPoll() {
+        ModelAndView modelAndView = new ModelAndView("fragments/todolist-polling-fragment");
         modelAndView.addObject("todos", todoListService.getTodos());
         return modelAndView;
     }

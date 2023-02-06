@@ -39,7 +39,7 @@
         </button>
     </form>
 
-    <section id="todos">
+    <section id="todos" hx-trigger="every 2s" hx-get="/todolist-polling">
         {{#todos}}
             <div class="todo todo-{{id}}">
                 <span class="text">{{text}}</span>
